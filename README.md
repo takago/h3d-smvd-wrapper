@@ -83,7 +83,7 @@ python tkg_textured_mesh_gen.py \
 
 ```bash
 python tkg_textured_mesh_gen.py \
-  --input-mesh ./smvd_output/mymesh.glb \
+  --input-mesh ./h3d_output/mymesh.glb \
   --prompt "a photo of ......"
 ```
 
@@ -133,9 +133,12 @@ $ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.
 $ tree -F .
 .
 ├── LICENSE
+├── h3d_output/      ......... Hunyuan3Dで出力ファイルを格納
+│   ├── mymesh.glb   ......... メッシュファイル
+│   └── mymesh.webp  ......... 背景を除去した入力画像 
 ├── MVD_latest -> smvd/MVD_30Apr2025-173120/  .... 最後にSyncMVDで生成した出力へのシンボリックリンク
 ├── smvd_output/
-│   └── MVD_30Apr2025-173120/  .............  SyncMVDによって作られる
+│   └── MVD_30Apr2025-173120/  .............  SyncMVDの生成物
 │       ├── config.yaml
 │       ├── intermediate/
 │       │   ├── cond.jpg
@@ -155,8 +158,6 @@ $ tree -F .
 ├── config.yaml
 ├── external/
 │   └── tkg_image2mesh.py
-├── mymesh.glb      ............. Hunyuan3D-2で生成されたメッシュ画像
-├── mymesh.webp     ............. 背景を除去された入力画像
 ├── input.png       ............. 入力画像
 └── tkg_textured_mesh_gen.py
 
@@ -170,5 +171,5 @@ $ f3d MVD_latest/results/textured.obj &
 ```
 テクスチャ付きメッシュを再生成（必要に応じてシードを変えたり，プロンプトを変えたりするとよい）
 ```
-$ python3 tkg_textured_mesh_gen.py --input-mesh ./smvd_output/hello.glb  --prompt "A photo of ...."
+$ python3 tkg_textured_mesh_gen.py --input-mesh ./h3d_output/mymesh.glb  --prompt "A photo of ...."
 ```
