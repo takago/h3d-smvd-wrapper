@@ -110,7 +110,7 @@ $ vi ~/SyncMVD/run_experiment.py
 $ vi config.yaml
    (書き換え)
 ```
-ようやく 実行
+実行（画像→テクスチャ付きメッシュ）
 ```
 $ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.glb --prompt "A photo of ...
 
@@ -151,6 +151,13 @@ $ tree .
 └── tkg_textured_mesh_gen.py
 
 5 directories, 27 files
+
+$ f3d mymesh.glb &
+ （メッシュの確認）
+
+$ f3d MVD_30Apr2025-162450/results/textured.obj &
+ （テクスチャ付きメッシュの確認）
+
 ```
 テクスチャ付きメッシュを再生成（必要に応じてシードを変えたり，プロンプトを変えたりするとよい）
 ```
