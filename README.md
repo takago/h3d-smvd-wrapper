@@ -29,7 +29,9 @@ project_root/
 
 ## ① 最初にすること
 
-`tkg_image2mesh.py` を Hunyuan3D-2 の直下にコピーする。
+`tkg_image2mesh.py` を Hunyuan3D-2 の直下にコピーしてください。
+
+付記： Hunyuan3D-2では メッシュ生成を高速化する Turbo版が出ています。Turbo版を利用したい場合は Hunyuan3D-2/examples/fast_shape_gen_with_flashvdm.py を参考にして，tkg_image2mesh.py を書き換えるとよいでしょう。
 
 ## ② `config.yaml` の設定
 
