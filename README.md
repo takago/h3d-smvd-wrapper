@@ -51,7 +51,7 @@ syncmvd:
 
 ## 🚀 簡単な使い方
    
-### ① Hunyuan3D-2でメッシュ生成，SyncMVDでテクスチャを合成する場合
+### ① Hunyuan3D-2でメッシュ生成，SyncMVDでテクスチャを合成を行う場合
 
 ```bash
 python tkg_textured_mesh_gen.py \
@@ -60,7 +60,7 @@ python tkg_textured_mesh_gen.py \
   --prompt "a photo of ......"
 ```
 
-### ② 既存メッシュを使って，SyncMVDのみ実行
+### ② 生成済みメッシュを使って，SyncMVDでテクスチャ合成のみ行う場合
 
 ```bash
 python tkg_textured_mesh_gen.py \
