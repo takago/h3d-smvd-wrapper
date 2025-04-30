@@ -158,7 +158,6 @@ $ tree -F .
 ├── input.png       ............. 入力画像
 └── tkg_textured_mesh_gen.py
 
-5 directories, 27 files
 
 $ f3d mymesh.glb &
  （メッシュの確認）
