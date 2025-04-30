@@ -62,6 +62,8 @@ python tkg_textured_mesh_gen.py \
   --prompt "a photo of ......"
 ```
 
+--prompt は SyncMVDに渡すプロンプトです．また，--seedなども設定できます（--helpで確認）．
+
 ### ② 生成済みメッシュを使って，SyncMVDでテクスチャ合成のみ行う場合
 
 ```bash
@@ -70,6 +72,5 @@ python tkg_textured_mesh_gen.py \
   --prompt "a photo of ......"
 ```
 
-### メモ
---prompt は SyncMVDに渡すプロンプトです．また，--seedなども設定できます（--helpで確認）．
+
  
