@@ -55,8 +55,8 @@ syncmvd:
 
 ## 🚀 簡単な使い方
 
-2通りの使い方があります。
-   
+3通りの使い方があります。
+ 
 ### ① Hunyuan3D-2でメッシュ生成，SyncMVDでテクスチャを合成を行う場合
 
 ```bash
@@ -66,15 +66,27 @@ python tkg_textured_mesh_gen.py \
   --prompt "a photo of ......"
 ```
 
---prompt は SyncMVDに渡すプロンプトです．また，--seedなども設定できます（--helpで確認）．
+--prompt は SyncMVDに渡すプロンプトです。また、--seedなども設定できます（--helpで確認）。
 
-### ② 生成済みメッシュを使って，SyncMVDでテクスチャ合成のみ行う場合
+### ② Hunyuan3D-2でメッシュ生成のみを行う場合
+  
+```bash
+python tkg_textured_mesh_gen.py \
+  --input-image input.png \
+  --output-mesh mymesh.glb 
+```
+ --prompt 指定を外すとメッシュ生成だけを行います
+
+### ③ 生成済みメッシュを使って，SyncMVDでテクスチャ合成のみ行う場合
 
 ```bash
 python tkg_textured_mesh_gen.py \
   --input-mesh mymesh.glb \
   --prompt "a photo of ......"
 ```
+
+
+
 
 ## 参考（一連の環境構築の作業）
 
@@ -119,6 +131,7 @@ $ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.
 $ tree .
 .
 ├── LICENSE
+├── MVD_latest -> smvd/MVD_30Apr2025-173120  .... 最後にSyncMVDで生成した出力へのシンボリックリンク
 ├── MVD_30Apr2025-162450         .............  SyncMVDによって作られる
 │   ├── config.yaml
 │   ├── intermediate
@@ -155,7 +168,7 @@ $ tree .
 $ f3d mymesh.glb &
  （メッシュの確認）
 
-$ f3d MVD_30Apr2025-162450/results/textured.obj &
+$ f3d MVD_latest/results/textured.obj &
  （テクスチャ付きメッシュの確認）
 
 ```
