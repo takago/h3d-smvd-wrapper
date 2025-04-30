@@ -34,9 +34,12 @@ def update_latest_symlink(base_dir, workdir, pattern="MVD_*", link_name="MVD_lat
 
 def main():
     SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-    WORKDIR = os.path.join(SCRIPT_DIR, "smvd_output")
+    H3D_OUTPUT_DIR = os.path.join(SCRIPT_DIR, "h3d_output")  # Hunyuan3D output
+    SMVD_OUTPUT_DIR = os.path.join(SCRIPT_DIR, "smvd_output")  # SyncMVD output
     CONFIG_PATH = os.path.join(SCRIPT_DIR, "config.yaml")
-    os.makedirs(WORKDIR, exist_ok=True)
+
+    os.makedirs(H3D_OUTPUT_DIR, exist_ok=True)
+    os.makedirs(SMVD_OUTPUT_DIR, exist_ok=True)
 
     config = load_config(CONFIG_PATH)
 
@@ -70,7 +73,7 @@ def main():
     print(f"[*] Using seed: {seed}")
 
     if args.input_image and args.output_mesh:
-        output_glb_path = os.path.join(WORKDIR, args.output_mesh)
+        output_glb_path = os.path.join(H3D_OUTPUT_DIR, args.output_mesh)
         subprocess.run([
             CONDA_HUNYUAN,
             os.path.join(HUNYUAN_DIR, HUNYUAN_SCRIPT),
@@ -94,7 +97,8 @@ def main():
     if args.prompt and output_glb_path:
         with tempfile.NamedTemporaryFile(mode="w", suffix=".yaml", prefix="tkg_", dir="/tmp", delete=False) as tmpfile:
             SYNCMVD_CONFIG = tmpfile.name
-            tmpfile.write(textwrap.dedent(f"""                output: "{WORKDIR}"
+            tmpfile.write(textwrap.dedent(f"""\
+                output: "{SMVD_OUTPUT_DIR}"
                 mesh: "{output_glb_path}"
                 mesh_config_relative: False
                 cond_type: "depth"
@@ -112,7 +116,7 @@ def main():
                 os.path.join(SYNCMVD_DIR, SYNCMVD_SCRIPT),
                 "--config", SYNCMVD_CONFIG
             ], check=True)
-            update_latest_symlink(SCRIPT_DIR, WORKDIR)
+            update_latest_symlink(SCRIPT_DIR, SMVD_OUTPUT_DIR)
         finally:
             if os.path.exists(SYNCMVD_CONFIG):
                 os.remove(SYNCMVD_CONFIG)
