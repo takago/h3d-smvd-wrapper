@@ -76,5 +76,79 @@ python tkg_textured_mesh_gen.py \
   --prompt "a photo of ......"
 ```
 
+## 参考（一連の環境構築の作業）
 
+まずは Hunyuan3D-2 の準備
+```
+$ cd ~/
+$ git clone https://github.com/Tencent/Hunyuan3D-2
+$ cd Hunyuan3D-2
+$ conda create -n hunyuan3d .....
+   :  
+$ conda deactivate
+```
+続いて SyncMVD の準備
+```
+$ cd ~/
+$ git clone https://github.com/LIU-Yuxin/SyncMVD
+$ cd SyncMVD
+$ conda create -n syncmvd .....
+   :
+   :
+$ conda deactivate
+```
+そして 本ツールの準備
+```
+$ cd ~/ 
+$ git clone https://github.com/takago/h3d-smvd-wrapper.git
+$ cd h3d-smvd-wrapper/
+$ cp external/tkg_image2mesh.py ~/Hunyuan3D-2/
+
+$ vi ~/SyncMVD/run_experiment.py
+   (必要に応じてチェックポイントやVAEなどを変更)
+
+$ vi config.yaml
+   (書き換え)
+```
+ようやく 実行
+```
+$ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.glb --prompt "A photo of ...
+
+ 終わるのを待つ
  
+$ tree .
+.
+├── LICENSE
+├── MVD_30Apr2025-162450         .............  SyncMVDによって作られる
+│   ├── config.yaml
+│   ├── intermediate
+│   │   ├── cond.jpg
+│   │   ├── step_03.jpg
+│   │   ├── step_07.jpg
+│   │   ├── step_11.jpg
+│   │   ├── step_15.jpg
+│   │   ├── step_19.jpg
+│   │   ├── step_23.jpg
+│   │   ├── step_27.jpg
+│   │   ├── step_29.jpg
+│   │   ├── texture_03.png
+│   │   ├── texture_07.png
+│   │   ├── texture_11.png
+│   │   ├── texture_15.png
+│   │   └── texture_19.png
+│   └── results       ............. 生成されたテクスチャ付きメッシュ
+│       ├── textured.mtl
+│       ├── textured.obj
+│       ├── textured.png
+│       └── textured_views_rgb.jpg
+├── README.md
+├── config.yaml
+├── external
+│   └── tkg_image2mesh.py
+├── mymesh.glb      ............. Hunyuan3D-2で生成されたメッシュ画像
+├── mymesh.webp     ............. 背景を除去された入力画像
+├── input.png       ............. 入力画像
+└── tkg_textured_mesh_gen.py
+
+5 directories, 27 files
+```
