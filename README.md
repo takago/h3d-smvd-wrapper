@@ -4,14 +4,14 @@
 
 ## 🔧 動作条件
 
-このツールは以下の外部ソフトウェアを subprocess 経由で使用します：
+本ツールは以下の外部ソフトウェアを subprocess 経由で使用します：
 
 - [Hunyuan3D-2](https://github.com/Tencent/Hunyuan3D-2)：Tencent Hunyuan 3D 2.0 Community License
 - [SyncMVD](https://github.com/LIU-Yuxin/SyncMVD) ：MIT License  
 
 それぞれのライセンス条項に従ってご利用ください。Hunyuan3D-2 は特に注意が必要です。
 
-（どちらも Conda 環境で用意してください）
+（Hunyuan3D-2 と SyncMVD はそれぞれ Conda 環境で用意してください。 本ツールはPythonの標準ライブラリしか使わないのでLinuxディストリビューションのPythonで問題ありません。）
 
 ## 📦 本ツールのディレクトリ構成
 
