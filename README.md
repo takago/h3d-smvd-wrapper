@@ -1,6 +1,6 @@
 # Hunyuan3D-2 と SyncMVD を使ったテクスチャ付き3Dメッシュの作成支援ツール
 
-Hunyuan3D-2でメッシュ生成（※）、SyncMVDでテクスチャ合成する場合、それぞれを個別に呼び出すのはそれなりに手間なので、1コマンドで使えるようにしただけです。
+Hunyuan3D-2でメッシュ生成（※）、SyncMVDでテクスチャ合成する場合、それぞれを個別に呼び出すのはそれなりに手間なので、1コマンドで使えるようにしただけです。SyncMVDの生成結果にアクセスしやすいようフォルダリンク（./MVD_latest/）も自動生成します。
 
 ※ 本来、Hunyuan3D-2ではメッシュ合成もできますが、ここではメッシュ生成だけを利用します
 
@@ -128,32 +128,33 @@ $ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.
 
  終わるのを待つ
  
-$ tree .
+$ tree -F .
 .
 ├── LICENSE
-├── MVD_latest -> smvd/MVD_30Apr2025-173120  .... 最後にSyncMVDで生成した出力へのシンボリックリンク
-├── MVD_30Apr2025-162450         .............  SyncMVDによって作られる
-│   ├── config.yaml
-│   ├── intermediate
-│   │   ├── cond.jpg
-│   │   ├── step_03.jpg
-│   │   ├── step_07.jpg
-│   │   ├── step_11.jpg
-│   │   ├── step_15.jpg
-│   │   ├── step_19.jpg
-│   │   ├── step_23.jpg
-│   │   ├── step_27.jpg
-│   │   ├── step_29.jpg
-│   │   ├── texture_03.png
-│   │   ├── texture_07.png
-│   │   ├── texture_11.png
-│   │   ├── texture_15.png
-│   │   └── texture_19.png
-│   └── results       ............. 生成されたテクスチャ付きメッシュ
-│       ├── textured.mtl
-│       ├── textured.obj
-│       ├── textured.png
-│       └── textured_views_rgb.jpg
+├── MVD_latest -> smvd/MVD_30Apr2025-173120/  .... 最後にSyncMVDで生成した出力へのシンボリックリンク
+├── smvd_output/
+│   └── MVD_30Apr2025-173120/  .............  SyncMVDによって作られる
+│       ├── config.yaml
+│       ├── intermediate/
+│       │   ├── cond.jpg
+│       │   ├── step_03.jpg
+│       │   ├── step_07.jpg
+│       │   ├── step_11.jpg
+│       │   ├── step_15.jpg
+│       │   ├── step_19.jpg
+│       │   ├── step_23.jpg
+│       │   ├── step_27.jpg
+│       │   ├── step_29.jpg
+│       │   ├── texture_03.png
+│       │   ├── texture_07.png
+│       │   ├── texture_11.png
+│       │   ├── texture_15.png
+│       │   └── texture_19.png
+│       └── results/    ...... 生成されたテクスチャ付きメッシュ
+│           ├── textured.mtl
+│           ├── textured.obj
+│           ├── textured.png
+│           └── textured_views_rgb.jpg
 ├── README.md
 ├── config.yaml
 ├── external
