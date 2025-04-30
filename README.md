@@ -152,7 +152,7 @@ $ tree .
 
 5 directories, 27 files
 ```
-テクスチャ付きメッシュを再生成
+テクスチャ付きメッシュを再生成（必要に応じてシードを変えたり，プロンプトを変えたりするとよい）
 ```
-python3 tkg_textured_mesh_gen.py --input-mesh hello.glb  --prompt "A photo of ...."
+$ python3 tkg_textured_mesh_gen.py --input-mesh hello.glb  --prompt "A photo of ...."
 ```
