@@ -173,7 +173,6 @@ $ f3d MVD_latest/results/textured.obj &
 ```
 $ python3 tkg_textured_mesh_gen.py --input-mesh ./h3d_output/mymesh.glb  --prompt "A photo of ...."
 ```
-```
 メッシュの出来が悪いならメッシュのみを再生成（必要に応じてシードを変えたり，プロンプトを変えたりするとよい）
 ```
 $ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.glb
