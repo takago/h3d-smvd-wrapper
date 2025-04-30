@@ -1,0 +1,9 @@
+hunyuan:
+  dir: "/home/<USER_NAME>/Hunyuan3D-2"
+  conda_python: "/home/<USER_NAME>/miniconda3/envs/hunyuan3d/bin/python"
+  script: "tkg_image2mesh.py"
+
+syncmvd:
+  dir: "/home/<USER_NAME>/SyncMVD"
+  conda_python: "/home/<USER_NAME>/miniconda3/envs/syncmvd/bin/python"
+  script: "run_experiment.py"
