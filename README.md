@@ -138,17 +138,11 @@ $ tree -F .
 │       ├── intermediate/
 │       │   ├── cond.jpg
 │       │   ├── step_03.jpg
-│       │   ├── step_07.jpg
-│       │   ├── step_11.jpg
-│       │   ├── step_15.jpg
-│       │   ├── step_19.jpg
-│       │   ├── step_23.jpg
+│       │   :
 │       │   ├── step_27.jpg
 │       │   ├── step_29.jpg
 │       │   ├── texture_03.png
-│       │   ├── texture_07.png
-│       │   ├── texture_11.png
-│       │   ├── texture_15.png
+│       │   :
 │       │   └── texture_19.png
 │       └── results/    ...... 生成されたテクスチャ付きメッシュ
 │           ├── textured.mtl
@@ -157,7 +151,7 @@ $ tree -F .
 │           └── textured_views_rgb.jpg
 ├── README.md
 ├── config.yaml
-├── external
+├── external/
 │   └── tkg_image2mesh.py
 ├── mymesh.glb      ............. Hunyuan3D-2で生成されたメッシュ画像
 ├── mymesh.webp     ............. 背景を除去された入力画像
