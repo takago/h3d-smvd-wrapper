@@ -1,6 +1,6 @@
 # Hunyuan3D-2 と SyncMVD を使ったテクスチャ付き3Dメッシュ作成ツール
 
-Hunyuan3D-2でメッシュ生成（※）、SyncMVDでテクスチャ合成する場合、それぞれを個別に呼び出すのはそれなりに手間なので、1コマンドで使えるようにしただけです。SyncMVDの生成結果にアクセスしやすいようフォルダリンク（./MVD_latest/）も自動生成します。
+[Hunyuan3D-2](https://github.com/Tencent/Hunyuan3D-2)でメッシュ生成（※）、[SyncMVD](https://github.com/LIU-Yuxin/SyncMVD)でテクスチャ合成する場合、それぞれを個別に呼び出すのはそれなりに手間なので、1コマンドで使えるようにしただけです。SyncMVDの生成結果にアクセスしやすいようフォルダリンク（./MVD_latest/）も自動生成します。
 
 ※ 本来、Hunyuan3D-2ではテクスチャ合成もできますが、ここではメッシュ生成だけを利用します
 
