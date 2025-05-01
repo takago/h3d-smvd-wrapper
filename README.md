@@ -59,6 +59,8 @@ syncmvd:
 ## 🚀 簡単な使い方
 
 3通りの使い方があります。
+（作られたGLBをターミナルのなかで確認するツール [EzRender](https://github.com/takago/EzRender)も作ったのでよかったら使ってください）
+
  
 ### ① Hunyuan3D-2でメッシュ生成，SyncMVDでテクスチャを合成を行う場合（②+③と同じ）
 
