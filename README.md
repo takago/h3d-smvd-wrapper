@@ -178,3 +178,13 @@ $ python3 tkg_textured_mesh_gen.py --input-mesh ./h3d_output/mymesh.glb  --promp
 ```
 $ python3 tkg_textured_mesh_gen.py --input-image input.png --output-mesh mymesh.glb
 ```
+
+
+## ライセンス
+
+MIT License（[LICENSE](./LICENSE) を参照）
+
+---
+
+© 2025 Daisuke TAKAGO
+
