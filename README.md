@@ -5,7 +5,7 @@ Hunyuan3D-2でメッシュ生成（※）、SyncMVDでテクスチャ合成す�
 ※ 本来、Hunyuan3D-2ではテクスチャ合成もできますが、ここではメッシュ生成だけを利用します
 
 ![Blenderで表示されたところ](AGABC.webp)
-(生成結果をBlenderで表示させてみました)
+(生成結果をBlenderで表示させてみました。 SD1.5のチェックポイントは [min__san](https://civitai.com/user/min__san)氏の [HimawariMix v11](https://civitai.com/models/131611/himawarimix ) を使用) 
 
 ## 🔧 動作条件
 
