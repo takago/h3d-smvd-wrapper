@@ -60,7 +60,7 @@ syncmvd:
 
 3通りの使い方があります。
  
-### ① Hunyuan3D-2でメッシュ生成，SyncMVDでテクスチャを合成を行う場合
+### ① Hunyuan3D-2でメッシュ生成，SyncMVDでテクスチャを合成を行う場合（②+③と同じ）
 
 ```bash
 python tkg_textured_mesh_gen.py \
